@@ -26,3 +26,8 @@ examples/visual/ftp/ftptest
 examples/visual/ftp/log.txt
 examples/visual/smtp/smtptest
 examples/visual/tcpudp/testnet
+examples/visual/telnet/telnet.lpi
+examples/visual/telnet/main.lrs
+examples/visual/telnet/main.lfm
+examples/visual/telnet/telnet.obj
+examples/visual/tcpudp/testnet.obj

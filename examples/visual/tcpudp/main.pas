@@ -18,7 +18,7 @@ type
     ButtonListen: TButton;
     CheckBoxSSL: TCheckBox;
     RBUDP6: TRadioButton;
-    SSL: TLSSLSessionComponent;
+    // SSL: TLSSLSessionComponent;
     LTCP: TLTCPComponent;
     LUDP: TLUDPComponent;
     EditPort: TEdit;
@@ -77,14 +77,14 @@ uses
 
 procedure TFormMain.ConnectButtonClick(Sender: TObject);
 begin
-  SSL.SSLActive := CheckBoxSSL.Checked;
+  // SSL.SSLActive := CheckBoxSSL.Checked;
   if FNet.Connect(EditIP.Text, StrToInt(EditPort.Text)) then
     FIsServer := False;
 end;
 
 procedure TFormMain.ListenButtonClick(Sender: TObject);
 begin
-  SSL.SSLActive := CheckBoxSSL.Checked;
+  // SSL.SSLActive := CheckBoxSSL.Checked;
 
   if FNet.Listen(StrToInt(EditPort.Text)) then begin
     MemoText.Append('Accepting connections');
@@ -231,8 +231,8 @@ var
   n: Integer;
 begin
   if FNet is TLUdp then begin // UDPv4, use broadcast
-    if FNet.SocketNet = LAF_INET6 then
-      raise Exception.create('Unable to broadcast with UDPv6');
+    // DAB if FNet.Socks = LAF_INET6 then
+    // DAB  raise Exception.create('Unable to broadcast with UDPv6');
     n := TLUdp(FNet).SendMessage(aMsg, LADDR_BR);
     if n < Length(aMsg) then
       MemoText.Append('Error on send [' + IntToStr(n) + ']');

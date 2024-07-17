@@ -1,11 +1,11 @@
 object FormMain: TFormMain
-  Left = 582
+  Left = 947
   Height = 451
-  Top = 332
+  Top = 253
   Width = 390
   ActiveControl = EditPort
   Caption = 'lNet Component Test'
-  ClientHeight = 426
+  ClientHeight = 451
   ClientWidth = 390
   Constraints.MaxWidth = 390
   Constraints.MinHeight = 400
@@ -13,20 +13,20 @@ object FormMain: TFormMain
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '3.4.0.0'
   object LabelPort: TLabel
     Left = 216
-    Height = 19
+    Height = 15
     Top = 13
-    Width = 32
+    Width = 25
     Caption = 'Port:'
     ParentColor = False
   end
   object LabelHostName: TLabel
     Left = 176
-    Height = 19
+    Height = 15
     Top = 36
-    Width = 72
+    Width = 58
     Caption = 'Hostname:'
     ParentColor = False
   end
@@ -46,16 +46,16 @@ object FormMain: TFormMain
     Width = 75
     BorderSpacing.InnerBorder = 4
     Caption = 'Send'
-    OnClick = SendButtonClick
     TabOrder = 1
+    OnClick = SendButtonClick
   end
   object EditSend: TEdit
     Left = 48
-    Height = 29
+    Height = 23
     Top = 344
     Width = 200
-    OnKeyPress = SendEditKeyPress
     TabOrder = 2
+    OnKeyPress = SendEditKeyPress
   end
   object ButtonConnect: TButton
     Left = 48
@@ -64,8 +64,8 @@ object FormMain: TFormMain
     Width = 75
     BorderSpacing.InnerBorder = 4
     Caption = 'Connect'
-    OnClick = ConnectButtonClick
     TabOrder = 3
+    OnClick = ConnectButtonClick
   end
   object ButtonListen: TButton
     Left = 136
@@ -74,8 +74,8 @@ object FormMain: TFormMain
     Width = 75
     BorderSpacing.InnerBorder = 4
     Caption = 'Host'
-    OnClick = ListenButtonClick
     TabOrder = 4
+    OnClick = ListenButtonClick
   end
   object ButtonDiconnect: TButton
     Left = 224
@@ -84,8 +84,8 @@ object FormMain: TFormMain
     Width = 104
     BorderSpacing.InnerBorder = 4
     Caption = 'Diconnect'
-    OnClick = DiconnectButtonClick
     TabOrder = 5
+    OnClick = DiconnectButtonClick
   end
   object GBConnection: TRadioGroup
     Left = 24
@@ -102,7 +102,7 @@ object FormMain: TFormMain
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 131
+    ClientHeight = 132
     ClientWidth = 140
     TabOrder = 6
     object RBTCP: TRadioButton
@@ -112,9 +112,9 @@ object FormMain: TFormMain
       Width = 128
       Caption = 'TCP/IPv4'
       Checked = True
-      OnChange = RBTCPChange
       TabOrder = 0
       TabStop = True
+      OnChange = RBTCPChange
     end
     object RBUDP4: TRadioButton
       Left = 6
@@ -122,9 +122,9 @@ object FormMain: TFormMain
       Top = 36
       Width = 128
       Caption = 'UDP/IPv4'
+      TabOrder = 1
       OnChange = RBUDP4Change
       OnClick = RBUDP4Click
-      TabOrder = 1
     end
     object RBTCP6: TRadioButton
       Left = 6
@@ -132,12 +132,12 @@ object FormMain: TFormMain
       Top = 66
       Width = 128
       Caption = 'TCP/IPv6'
-      OnChange = RBTCP6Change
       TabOrder = 2
+      OnChange = RBTCP6Change
     end
     object RBUDP6: TRadioButton
       Left = 6
-      Height = 29
+      Height = 30
       Top = 96
       Width = 128
       Caption = 'UDP/IPv6'
@@ -146,7 +146,7 @@ object FormMain: TFormMain
   end
   object EditPort: TEdit
     Left = 261
-    Height = 29
+    Height = 23
     Top = 8
     Width = 59
     TabOrder = 7
@@ -154,7 +154,7 @@ object FormMain: TFormMain
   end
   object EditIP: TEdit
     Left = 261
-    Height = 29
+    Height = 23
     Top = 33
     Width = 123
     TabOrder = 8
@@ -162,9 +162,9 @@ object FormMain: TFormMain
   end
   object CheckBoxSSL: TCheckBox
     Left = 261
-    Height = 22
+    Height = 19
     Top = 64
-    Width = 78
+    Width = 58
     Caption = 'Use SSL'
     TabOrder = 9
   end
@@ -177,21 +177,20 @@ object FormMain: TFormMain
     OnAccept = LTCPComponentAccept
     Timeout = 0
     ReuseAddress = True
-    Session = SSL
-    left = 344
-    top = 232
+    Left = 344
+    Top = 232
   end
   object LUDP: TLUDPComponent
     Port = 0
     OnReceive = LTCPComponentReceive
     OnError = LTCPComponentError
     Timeout = 0
-    left = 344
-    top = 280
+    Left = 344
+    Top = 280
   end
   object MainMenu1: TMainMenu
-    left = 344
-    top = 192
+    Left = 344
+    Top = 192
     object MenuItemFile: TMenuItem
       Caption = '&File'
       object MenuItemExit: TMenuItem
@@ -207,19 +206,11 @@ object FormMain: TFormMain
       end
     end
   end
-  object SSL: TLSSLSessionComponent
-    CAFile = 'cert'
-    KeyFile = 'pkey'
-    Method = msSslTLS
-    SSLActive = False
-    left = 344
-    top = 144
-  end
   object TimerQuit: TTimer
     Enabled = False
     Interval = 200
     OnTimer = TimerQuitTimer
-    left = 344
-    top = 95
+    Left = 344
+    Top = 95
   end
 end
