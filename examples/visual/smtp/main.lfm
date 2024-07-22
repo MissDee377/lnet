@@ -425,7 +425,5 @@ object MainForm: TMainForm
     Method = msSslTLS
     SSLActive = False
     OnSSLConnect = SSLSessionSSLConnect
-    left = 360
-    top = 248
   end
 end

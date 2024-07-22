@@ -6,7 +6,7 @@ object MainForm: TMainForm
   ActiveControl = Panel1
   BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'FTP Test Client'
-  ClientHeight = 484
+  ClientHeight = 505
   ClientWidth = 725
   Constraints.MinHeight = 400
   Constraints.MinWidth = 725
@@ -15,11 +15,11 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
-  LCLVersion = '0.9.29'
+  LCLVersion = '3.4.0.0'
   object MemoText: TMemo
     Left = 0
     Height = 98
-    Top = 371
+    Top = 384
     Width = 725
     Align = alBottom
     ReadOnly = True
@@ -28,16 +28,16 @@ object MainForm: TMainForm
   end
   object Panel1: TPanel
     Left = 0
-    Height = 322
+    Height = 335
     Top = 24
     Width = 725
     Align = alClient
-    ClientHeight = 322
+    ClientHeight = 335
     ClientWidth = 725
     TabOrder = 1
     object LeftView: TFileListBox
       Left = 1
-      Height = 320
+      Height = 333
       Top = 1
       Width = 183
       Align = alLeft
@@ -50,17 +50,16 @@ object MainForm: TMainForm
       Sorted = False
       Style = lbOwnerDrawFixed
       TabOrder = 0
-      TopIndex = -1
     end
     object Splitter2: TSplitter
       Left = 184
-      Height = 320
+      Height = 333
       Top = 1
       Width = 5
     end
     object rmtGrid: TStringGrid
       Left = 189
-      Height = 320
+      Height = 333
       Top = 1
       Width = 535
       Align = alClient
@@ -109,15 +108,15 @@ object MainForm: TMainForm
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 366
+    Top = 379
     Width = 725
     Align = alBottom
     ResizeAnchor = akBottom
   end
   object SBar: TStatusBar
     Left = 0
-    Height = 15
-    Top = 469
+    Height = 23
+    Top = 482
     Width = 725
     Panels = <    
       item
@@ -148,21 +147,21 @@ object MainForm: TMainForm
       Action = accSiteManager
     end
     object ToolButton3: TToolButton
-      Left = 88
+      Left = 78
+      Height = 22
       Top = 2
-      Width = 13
       Caption = 'ToolButton3'
       Style = tbsDivider
     end
     object ToolButton4: TToolButton
-      Left = 101
+      Left = 83
       Top = 2
       Action = accConnect
       Grouped = True
       Style = tbsCheck
     end
     object ToolButton2: TToolButton
-      Left = 159
+      Left = 136
       Top = 2
       Action = accDisconnect
       Down = True
@@ -173,15 +172,15 @@ object MainForm: TMainForm
   object ProgressBar1: TProgressBar
     Left = 0
     Height = 20
-    Top = 346
+    Top = 359
     Width = 725
     Align = alBottom
     Step = 1
     TabOrder = 5
   end
   object MainMenu: TMainMenu
-    left = 384
-    top = 368
+    Left = 384
+    Top = 368
     object MenuItemFile: TMenuItem
       Caption = '&File'
       object MenuSiteManager: TMenuItem
@@ -209,8 +208,8 @@ object MainForm: TMainForm
     end
   end
   object PopupRight: TPopupMenu
-    left = 568
-    top = 368
+    Left = 568
+    Top = 368
     object PupupGet: TMenuItem
       Caption = 'Get'
       OnClick = rmtGridDblClick
@@ -238,12 +237,12 @@ object MainForm: TMainForm
     OnFailure = FTPSuccess
     PipeLine = False
     Timeout = 0
-    left = 200
-    top = 368
+    Left = 200
+    Top = 368
   end
   object PopupLeft: TPopupMenu
-    left = 464
-    top = 368
+    Left = 464
+    Top = 368
     object PopupLInfo: TMenuItem
       Caption = 'Info'
       OnClick = LInfoPopupClick
@@ -258,8 +257,8 @@ object MainForm: TMainForm
     end
   end
   object ActionList1: TActionList
-    left = 288
-    top = 368
+    Left = 288
+    Top = 368
     object accSiteManager: TAction
       Caption = 'Site Manager'
       OnExecute = accSiteManagerExecute

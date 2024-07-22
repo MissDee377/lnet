@@ -1,18 +1,20 @@
 object FormMain: TFormMain
-  Left = 290
+  Left = 78
   Height = 463
-  Top = 190
+  Top = 386
   Width = 548
   HorzScrollBar.Page = 547
   VertScrollBar.Page = 437
   ActiveControl = EditHost
   Caption = 'Telnet test client'
-  ClientHeight = 438
+  ClientHeight = 463
   ClientWidth = 548
   Menu = MainMenu1
   OnShow = FormShow
+  LCLVersion = '3.4.0.0'
   object MemoText: TMemo
-    Height = 326
+    Left = 0
+    Height = 351
     Top = 89
     Width = 548
     Align = alClient
@@ -20,34 +22,37 @@ object FormMain: TFormMain
     TabOrder = 0
   end
   object EditSend: TEdit
+    Left = 0
     Height = 23
-    Top = 415
+    Top = 440
     Width = 548
     Align = alBottom
-    OnKeyPress = EditSendKeyPress
     TabOrder = 1
+    OnKeyPress = EditSendKeyPress
   end
   object GroupBoxServer: TGroupBox
+    Left = 0
     Height = 89
+    Top = 0
     Width = 548
     Align = alTop
     Caption = 'Server'
-    ClientHeight = 70
+    ClientHeight = 69
     ClientWidth = 544
     TabOrder = 2
     object LabelHost: TLabel
       Left = 6
-      Height = 20
+      Height = 15
       Top = 10
-      Width = 35
+      Width = 28
       Caption = 'Host:'
       ParentColor = False
     end
     object LabelPort: TLabel
       Left = 6
-      Height = 20
+      Height = 15
       Top = 42
-      Width = 31
+      Width = 25
       Caption = 'Port:'
       ParentColor = False
     end
@@ -73,8 +78,8 @@ object FormMain: TFormMain
       Top = 37
       Width = 75
       Caption = 'Connect'
-      OnClick = ButtonConnectClick
       TabOrder = 2
+      OnClick = ButtonConnectClick
     end
     object ButtonDisconnect: TButton
       Left = 246
@@ -82,8 +87,8 @@ object FormMain: TFormMain
       Top = 37
       Width = 96
       Caption = 'Disconnect'
-      OnClick = ButtonDisconnectClick
       TabOrder = 3
+      OnClick = ButtonDisconnectClick
     end
   end
   object Telnet: TLTelnetClientComponent
@@ -93,13 +98,14 @@ object FormMain: TFormMain
     OnDisconnect = TelnetDisconnect
     OnReceive = TelnetReceive
     OnError = TelnetError
+    Timeout = 0
     LocalEcho = True
-    left = 512
-    top = 56
+    Left = 512
+    Top = 56
   end
   object MainMenu1: TMainMenu
-    left = 480
-    top = 56
+    Left = 480
+    Top = 56
     object MenuItemFile: TMenuItem
       Caption = '&File'
       object MenuItemExit: TMenuItem
